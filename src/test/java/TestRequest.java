@@ -21,6 +21,7 @@ public class TestRequest {
             String url = "http://cms.cyngame.cn:8190/initAction/initLoadTable.action?actions=getAdvertCommonConfigValues&methodName=AdvertJoinSDK_ReCreate&formValue=%7B%22asId%22%3A%229483%2C5717%2C3018%22%7D";
             System.out.println(url);
             HttpGet httpGet = new HttpGet(url);
+            long startTime = System.nanoTime();
 
             // 设置cookie
             httpGet.setHeader("Cookie", "JSESSIONID=EC65FFFD5BB085FCCE69CD4587FFCAFE.jvm1");
