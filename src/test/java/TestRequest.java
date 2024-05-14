@@ -5,9 +5,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-import java.net.URL;
-import java.net.URLEncoder;
-
 public class TestRequest {
 
     public static void main(String[] args) throws Exception {
@@ -18,14 +15,16 @@ public class TestRequest {
 //            String baseUrl = "http://cms.cyngame.cn:8190/initAction/initLoadTable.action";
 //            String queryUrl = "?actions=addAdvertCommonConfigValues&methodName=AdvertJoinSDK_ReCreate&formValue=%7B%22asId%22%3A%229483%2C5717%2C3018%22%2C%22key%22%3A%22AXR%22%2C%22value%22%3A%2297%22%2C%22cId%22%3A398%7D";
 //            String url = baseUrl + URLEncoder.encode(queryUrl, "UTF-8");
+            //正常代码
             String url = "http://cms.cyngame.cn:8190/initAction/initLoadTable.action?actions=getAdvertCommonConfigValues&methodName=AdvertJoinSDK_ReCreate&formValue=%7B%22asId%22%3A%229483%2C5717%2C3018%22%7D";
             System.out.println(url);
             HttpGet httpGet = new HttpGet(url);
             long startTime = System.nanoTime();
 
             // 设置cookie
-            httpGet.setHeader("Cookie", "JSESSIONID=EC65FFFD5BB085FCCE69CD4587FFCAFE.jvm1");
-            //A5047FD8839B2D5A38685F6FBB5014BB
+            httpGet.setHeader("Cookie", "JSESSIONID=04513330D207515B4730103A0E4DA190.jvm1");
+
+
 
             // 执行请求
             try (CloseableHttpResponse response = httpClient.execute(httpGet)) {
@@ -52,7 +51,7 @@ public class TestRequest {
                 }
             }
             long endTime = System.nanoTime();
-            System.out.println("请求耗时：" + (endTime - startTime) / 1000000 + "ms");
+//            System.out.println("请求耗时：" + (endTime - startTime) / 1000000 + "ms");
         }
     }
 }
